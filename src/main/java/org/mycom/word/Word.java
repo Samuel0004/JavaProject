@@ -1,6 +1,7 @@
 package org.mycom.word;
 
 public class Word {
+
     private int id;
     private int level;
     private String word;
@@ -44,5 +45,14 @@ public class Word {
 
     public void setMeaning(String meaning) {
         this.meaning = meaning;
+    }
+
+    @Override
+    public String toString() {
+
+        String slevel = "";
+        for (int i=0 ; i<level ; i++) slevel += "*";
+        String str = String.format("%-3s",slevel) + String.format("%15", word) + "  " + meaning;
+        return str;
     }
 }
